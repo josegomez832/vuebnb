@@ -12,7 +12,7 @@
 		computed: {
 			headerImageStyle(){
 				return {
-          'background-image':'url(${this.imageURL})'
+          'background-image' : 'url( '+this.imageUrl+')'
 					//'background-image': 'url('+model.images[0]+')'
 				};
 			}
