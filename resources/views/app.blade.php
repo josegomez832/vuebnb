@@ -8,19 +8,11 @@
   <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css">
   <link rel="stylesheet" href="{{ asset('css/vue-style.css') }}" type="text/css">
   <script>
-    window.vuebnb_listing_model = "{!! addSlashes(json_encode($model)) !!}";
+    window.vuebnb_server_data = "{!! addSlashes(json_encode($data)) !!}";
 </script>
 </head>
 <body>
-<div id="toolbar">
-  <img class="icon" src="{{ asset('images/logo.png') }}">
-  <h1>vuebnb</h1>
-</div>
 <div id="app"></div><!--/app-->
-   
-
-
 <script src="{{ asset('js/app.js') }}"></script>
-
 </body>
 </html>
