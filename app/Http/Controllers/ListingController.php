@@ -22,23 +22,37 @@ class ListingController extends Controller
     	//we use the response helper with json method to pass the array into fields
     	return response()->json($data);
     }
-    public function get_listing_web(Listing $listing){
+    private function add_meta_data($collection, $request){
+        return $collection->merge([
+            'path'=>$request->getPathInfo()
+        ]);
+    }
+    public function get_listing_web(Listing $listing, Request $request){
     	$data = $this->get_listing($listing);
+        $data = $this->add_meta_data($data, $request);
     	return view('app', ['data'=>$data]);
     }
-     public function get_home_web(){
+    private function get_listing_summaries(){
         $collection = Listing::all([
             'id', 'address', 'title', 'price_per_night'
         ]);
-
         $collection -> transform( function($listing){
             $listing->thumb = asset(
                 'images/' . $listing->id . '/Image_1_thumb.jpg'
             );
             return $listing;
         });
-        $data = collect(['listings' => $collection->toArray()]);
+        return collect(['listings' => $collection->toArray()]);
+    }
+     public function get_home_web(Request $request){
+        $data = $this->get_listing_summaries();
+        $data = $this->add_meta_data($data, $request);
         return view('app', ['data'=>$data]);
         //dd($data);
+    }
+    public function get_home_api(){
+        $data = $this->get_listing_summaries();
+        
+        return response()->json($data);
     }
 }

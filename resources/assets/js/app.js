@@ -1,7 +1,9 @@
 import 'core-js/fn/object/assign';
 import Vue from 'vue';
-import App from '../components/App.vue';
+
 import router from './router';
+import App from '../components/App.vue';
+
 
 var app = new Vue({
 	el: '#app',

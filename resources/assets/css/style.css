@@ -1,4 +1,7 @@
-#body {
+body, html{
+	overflow-x:hidden;
+}
+body {
   font-family: 'Open Sans', sans-serif;
   color: #484848;
   font-size: 17px;
@@ -10,7 +13,21 @@ body.modal-open{
 .container {
   margin: 0 auto;
 }
-
-
-
-
+.listing-container{
+	margin:0 auto;
+	padding:0 12px;
+}
+@media(min-width:744px){
+	.listing-container{
+		width:696px;
+	}
+}
+.home-container{
+	margin:0 auto;
+	padding:0 25px;
+}
+@media(min-width:1131px){
+	.home-container{
+		width:1080px;
+	}
+}
