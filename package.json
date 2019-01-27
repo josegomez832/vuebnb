@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "axios": "^0.17",
+    "core-js": "^2.6.3",
     "cross-env": "^5.1",
     "font-awesome": "^4.7.0",
     "laravel-mix": "^1.4",

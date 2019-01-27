@@ -13,18 +13,29 @@ body.modal-open{
 .container {
   margin: 0 auto;
 }
-.listing-container{
+.listing-container, .login-container{
 	margin:0 auto;
 	padding:0 12px;
+}
+.login-container{
+
 }
 @media(min-width:744px){
 	.listing-container{
 		width:696px;
 	}
 }
+@media(min-width:374px){
+	.login-container{
+		width:350px;
+	}
+}
 .home-container{
 	margin:0 auto;
 	padding:0 25px;
+}
+input[type=text]{
+	-webkit-appearance:none;
 }
 @media(min-width:1131px){
 	.home-container{
